@@ -37,7 +37,6 @@ class RPS:
 
     def __init__(self, player_choice, computer_choice):
         # get attack statement
-        # print(f"player choice: {player_choice}. computer choice {computer_choice} comparison matrix: {self.choices.index(player_choice), self.choices.index(computer_choice)}")
         comparison = [self.choices.index(player_choice), self.choices.index(computer_choice)]
         # print(f"comparison: {comparison}")
         if 0 in comparison and 2 in comparison:
