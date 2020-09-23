@@ -102,7 +102,6 @@ def play_game(game_chosen):
         while not player_choice:
             choice_attempt = input("\nYour choice?  ")
             try:
-                choice_attempt == game_chosen.choices[int(choice_attempt) -1]
                 player_choice = game_chosen.choices[int(choice_attempt) -1]
             except:
                 clear()
