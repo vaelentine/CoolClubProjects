@@ -1,8 +1,12 @@
-from colorama import Fore, Style
+from colorama import init, Fore, Style
 from time import sleep
 from os import system, name
 import sys
 from random import choice
+
+# Colorama initialization for Windows
+if name == 'nt':
+    init(convert=True)
 
 # print(f'This is {Fore.GREEN}color! {Style.RESET_ALL}')
 magic_str = "  MAGIC  "
