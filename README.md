@@ -3,6 +3,8 @@
 <img src=https://res.cloudinary.com/teepublic/image/private/s--Hn9fiFxx--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1515213242/production/designs/2257873_1.jpg width="100" height="100" />
 
 ### This repo is intended to be used for python projects
+We use something like github flow for version control. Read more about that here: https://githubflow.github.io/
+
 
 ### Prerequisites:
 1. A github account.
@@ -10,14 +12,19 @@
 1. choose a folder where you want this repo to live and clone it (click the green "code" button and copy the repo link onto your clipboard. on the command line type `git clone <repository link`)
 
 ### Make changes in this repo:
-1. make a new branch starting with "feature-", thus the full name would be  "Feature-<your branch name>" (without the arrow brackets) (on the command line this would be `git branch -b "<feature-your branch name>"` (note that this will automatically switch you into your branch)
-2. Create a folder under your name if you haven't, then edit code within your folder.
+1. make a new branch (recommended) starting with "feature/", thus the full name would be  "feature/<your-branch-name>" (without the arrow brackets, kebab case) (on the command line this would be `git checkout -b "<feature/your-branch-name>"` (note that this will automatically switch you into your branch)
+ 
+2. Create a folder under your name if you haven't already, then edit code within your folder. Notes on this: You may also update update the .gitignore but make sure to submit your changes in a pull request. If you want to add a "requirements.txt" file do so within your personal folder, so that different devs can set up different requirements for their apps. If you add a virtual environment folder (recommended to keep your packages contained and not pollute your global scope), this should be gitignored, so feel free to add as many as you want either at the repo directory root or in your folder.
+ 
 3. Commit and push code on your branch (using `git add <filenames>` then `git commit -m "<your commit message>" then git push)
+
 4. Make a pull request (navigate to your branch on github, use the dropdown on the left side of the repo page on github, then click the "create pull request" button)
+
 5. Get someone to review/approve your PR + merge it into the master branch or appropriate feature branch.
   
 
-### How to make a new branch:
+### Working on branches:
+
 (make sure you have git installed and the repository)
 `git checkout -b <your-branch-name>`
 
@@ -44,6 +51,6 @@ Now you're ready to make a pull request!
 Go onto github and look for the green button for pull request.
 Click it, which will make a new pull request.
 
-Get someone in this repo to review and approve your code changes. 
+Get someone in this repo to review and approve your code changes, and then test in their environment. 
 
-Once it is approved, someone with permissions (vaelentine) can merge it onto master.
+Once it is approved, a repository maintainer can merge it onto master (if the option isn't available to you, you either haven't been invited yet or accepted your permissions.)
