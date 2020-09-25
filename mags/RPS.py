@@ -2,10 +2,9 @@
 import random
 from os import system, name
 from time import sleep
+import sys
 
 # TODO: rpsls
-
-
 
 # -1, lose; 0, tie; 1, win
 class Player:
@@ -66,12 +65,13 @@ def clear():
         _ = system('clear')
 
     print(end='\n\n\n')
+
 # for making thinking dots so you know stuff is happening
 def dot_printer(time):
-    print('.', end=" ")
-    sleep(time)
-    print('.', end=" ")
-    sleep(time)
+    for i in range(5):
+        print('.', end=" ")
+        sys.stdout.flush()
+        sleep(time/5)
 
 def comp_choose(choices):
     return random.choice(choices)
