@@ -1,0 +1,4 @@
+colorama==0.4.3
+playsound==1.2.2
+pygame==2.0.1
+PyMySQL==1.0.2
