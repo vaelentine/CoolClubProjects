@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload a bulk CSV</title>
+</head>
+<body>
+   <form action="." method="post" enctype="multipart/form-data">
+        {{ upload_csv_form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Upload File</button>
+    </form>
+<div><a href="/">Go Back</a></div>
+
+</body>
+</html>
