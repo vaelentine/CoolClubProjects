@@ -1,7 +1,9 @@
-﻿# CoolClubProjects
- 
-<img src=https://res.cloudinary.com/teepublic/image/private/s--Hn9fiFxx--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1515213242/production/designs/2257873_1.jpg width="100" height="100" />
 
+<p align="center">
+<img src=https://user-images.githubusercontent.com/26351860/121793566-37c35780-cbb5-11eb-9bcc-d33b76aea973.jpg width="100" height="100"  />
+</p>
+
+# CoolClubProjects
 ### This repo is intended to be used for coding projects primarily written in (but not limited to) python, javascript and various frameworks including django, vue and react. 
 We use something like github flow for version control. Read more about that here: https://githubflow.github.io/
 
