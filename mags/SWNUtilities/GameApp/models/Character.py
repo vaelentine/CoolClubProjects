@@ -1,5 +1,4 @@
 from django.db import models
-from .Player import Player
 
 
 class Character(models.Model):
@@ -8,6 +7,7 @@ class Character(models.Model):
     attributes = models.ForeignKey('Attributes', null=True, related_name='character_attributes', on_delete=models.SET_NULL)
     faction = models.ForeignKey('Faction', null=True, related_name='character_factions', on_delete=models.SET_NULL)
     party = models.ForeignKey('Party', null=True, related_name='character_party', on_delete=models.SET_NULL)
+    pronouns = models.ForeignKey('Pronouns', null=True, related_name='character_pronouns', on_delete=models.SET_NULL)
 
     def __str__(self):
         return str(self.name)

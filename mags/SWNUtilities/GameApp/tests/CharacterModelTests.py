@@ -1,6 +1,6 @@
 from django.test import TestCase
 from unittest import mock
-from GameApp.models import Character, Attributes, Player, Faction, Party
+from GameApp.models import Character, Attributes, Player, Faction, Party, Pronouns
 from django.db.utils import IntegrityError
 
 class CharacterModelUnitTests(TestCase):
@@ -93,7 +93,8 @@ class CharacterModelUnitTests(TestCase):
 
     def test_09_update_character_name(self):
         char_obj_1 = Character.objects.get(name='ImaTest')
-        char_obj_1.name = 'NotImaTest'
+        self.mock.name_01 = 'NotImaTest'
+        char_obj_1.name = self.mock.name_01
         char_obj_1.save()
         with self.subTest():
             test_updated_obj = Character.objects.get(name='NotImaTest')
@@ -104,6 +105,16 @@ class CharacterModelUnitTests(TestCase):
     def test_10_delete_character(self):
         char_obj = Character.objects.get(name=self.mock.name_02)
         char_obj_id = char_obj.id
-
         char_obj.delete()
         self.assertRaises(Character.DoesNotExist, lambda: Character.objects.get(id=char_obj_id))
+
+    def test_11_add_pronouns(self):
+        test_name = 'Pronoun Me'
+        Character.objects.create(name=test_name)
+        p_set = Pronouns.objects.create()  # default set
+        p_id = p_set.id
+        char_obj = Character.objects.get(name=test_name)
+        char_obj.pronouns = p_set
+        char_obj.save()
+        p_obj = Pronouns.objects.get(id=p_id)
+        self.assertEqual(char_obj.pronouns.gender_name, p_obj.gender_name)
