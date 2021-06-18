@@ -18,7 +18,7 @@ We use something like github flow for version control. Read more about that here
  
 2. Create a folder under your name if you haven't already, then edit code within your folder. Notes on this: You may also update update the .gitignore but make sure to submit your changes in a pull request. If you want to add a "requirements.txt" file do so within your personal folder, so that different devs can set up different requirements for their apps. If you add a virtual environment folder (recommended to keep your packages contained and not pollute your global scope), this should be gitignored, so feel free to add as many as you want either at the repo directory root or in your folder.
  
-3. Commit and push code on your branch (using `git add <filenames>` then `git commit -m "<your commit message>" then git push)
+3. Commit and push code on your branch (using `git add <filenames>` then `git commit -m "<your commit message>"` then `git push`)
 
 4. Make a pull request (navigate to your branch on github, use the dropdown on the left side of the repo page on github, then click the "create pull request" button)
 
@@ -41,7 +41,7 @@ How to commit and push your code:
 OR 
 `git add .` to add all files
 THEN
-`git commit -m "<your commit message>"
+`git commit -m "<your commit message>"`
 
 FINALLY
 'git push origin <your-branch-name>`
