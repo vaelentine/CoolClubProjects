@@ -21,3 +21,6 @@ This is a django application - to start:
 
 5. Start the server: 
     - run `python manage.py runserver`
+
+6. View the project root url:
+  - In a browser, navigate to `localhost:8000`
