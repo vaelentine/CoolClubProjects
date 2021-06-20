@@ -28,7 +28,6 @@ def get_name(request):
 """
 
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 
 from GameApp.forms import ModelChoiceForm
 
