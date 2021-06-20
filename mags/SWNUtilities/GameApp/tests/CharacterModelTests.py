@@ -1,7 +1,8 @@
 from django.test import TestCase
 from unittest import mock
-from GameApp.models import Character, Attributes, Player, Faction, Party, Pronouns
 from django.db.utils import IntegrityError
+from GameApp.models import Character, Attributes, Player, Faction, Party, Pronouns
+
 
 class CharacterModelUnitTests(TestCase):
     def setUp(self):
