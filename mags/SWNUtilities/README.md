@@ -8,10 +8,13 @@ This is a django application - to start:
  - start the virtual environment Bash:`source venv/bin/activate` or Win:`venv/Scripts/activate` 
  - Install requirments `pip install -r requirements.txt`
 
-2. Run initial migrations and instantiate your db: `python manage.py makemigrations` `python manage.py migrate`
+2. Create a new secret key in an environment file
+ - from this folder, run `python setup.py`
 
-3. Make sure tests are passing: `python manage.py test -v2` (2 is level of verbosity 2, which will identify tests)
+3. Run initial migrations and instantiate your db: `python manage.py makemigrations` `python manage.py migrate`
 
-4. Start the server: `python manage.py runserver`
+4. Make sure tests are passing: `python manage.py test -v2` (2 is level of verbosity 2, which will identify tests)
+
+5. Start the server: `python manage.py runserver`
 
  
