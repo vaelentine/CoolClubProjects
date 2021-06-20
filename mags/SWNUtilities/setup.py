@@ -14,6 +14,7 @@ def get_new_secret_key():
 def create_new_env(key):
     f = open(".env", "w+")
     f.write(f'SECRET_KEY = {key}')
+    f.close()
 
 
 if __name__ == '__main__':

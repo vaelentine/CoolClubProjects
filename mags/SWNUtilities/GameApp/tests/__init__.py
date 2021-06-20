@@ -1,1 +1,2 @@
-from .CharacterModelTests import *
+from .CharacterModelTests import CharacterModelUnitTests
+
