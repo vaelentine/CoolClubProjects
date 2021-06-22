@@ -1,2 +1,3 @@
-from GameApp.views import index
-from GameApp.views import ModelsDropDown
+from . import index
+from . import ModelsDropDown
+from .CharacterViews import CharacterList, CharacterCreate, CharacterDetail, CharacterUpdate, CharacterDelete

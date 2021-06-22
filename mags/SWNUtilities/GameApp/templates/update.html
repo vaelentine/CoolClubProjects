@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<html>
+<head>
+<title>{{ object }}</title>
+</head>
+
+<body>
+<h1>Edit {{ object }}</h1>
+
+    {% if object %}
+    <ul class="objects">
+    {% for object in objects %}
+    <li{% if object.name %} class="{{ object.name }}"{% endif %}>{{ object }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if error %}
+    {{ error }}
+    {% endif %}
+
+    <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Edit {{ object }}"/>
+        <a href="{% url 'character_delete' object.id %}"> Delete {{ object }} </a>
+
+</form>
+
+<br/><br/>
+
+</body>
+
+</body>
+</html>
