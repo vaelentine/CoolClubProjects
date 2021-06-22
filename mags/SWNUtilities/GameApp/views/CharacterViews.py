@@ -10,7 +10,7 @@ from ..models import Character
 
 class CharacterList(ListView):
     model = Character
-    template_name = "object_list.html"
+    template_name = "character_list.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -22,9 +22,6 @@ class CharacterDetail(DetailView):
     template_name = "character_detail.html"
     fields = '__all__'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
 
 class CharacterCreate(CreateView):
     model = Character

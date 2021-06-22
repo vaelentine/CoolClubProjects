@@ -9,23 +9,23 @@ urlpatterns = [
          ModelsDropDown.models_choice,
          name='models'),
 
-    path('characters',
+    path('character/list/',
          views.CharacterList.as_view(),
          name='character_list'),
 
-    path('character/create',
+    path('character/create/',
          CharacterCreate.as_view(),
          name='character_create'),
 
-    path('character/<int:pk>',
+    path('character/<int:pk>/detail/',
          CharacterDetail.as_view(),
          name='character_detail'),
 
-    path('character/update/<int:pk>',
+    path('character/<int:pk>/update/',
          CharacterUpdate.as_view(),
          name='character_update'),
 
-    path('character/delete/<int:pk>',
+    path('character/<int:pk>/delete/',
          CharacterDelete.as_view(),
          name='character_delete')
 ]

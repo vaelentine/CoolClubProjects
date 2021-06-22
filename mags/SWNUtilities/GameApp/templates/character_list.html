@@ -11,7 +11,7 @@
     <!-- Iterate over object_list -->
     {% for object in object_list %}
     <!-- Display Objects -->
-    <li><a href="character/{{ object.pk }}"> {{ object.name  }}</a></li>
+    <li><a href="{% url 'character_detail' pk=object.pk %}"> {{ object.name }}</a></li>
 
     <hr/>
     <!-- If objet_list is empty  -->

@@ -29,7 +29,7 @@
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Edit {{ object }}"/>
-        <a href="{% url 'character_delete' object.id %}"> Delete {{ object }} </a>
+        <a href="{% url 'character_delete' pk=object.id %}"> Delete {{ object }} </a>
 
 </form>
 
