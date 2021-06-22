@@ -29,7 +29,7 @@ def get_name(request):
 
 from django.shortcuts import render
 
-from GameApp.forms import ModelChoiceForm
+from ..forms import ModelChoiceForm
 
 
 def models_choice(request):
