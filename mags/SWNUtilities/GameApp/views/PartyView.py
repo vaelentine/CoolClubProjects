@@ -7,7 +7,7 @@ from ..forms import PartyForm
 from ..models import Party
 
 
-class PartyCharacters(ListView):
+class PartyCharactersList(ListView):
     model = Party
     template_name = 'party_characters_list.html'
 
@@ -18,6 +18,7 @@ class PartyCharacters(ListView):
         for character in party_characters:
             context['party_characters'] = party_characters
         return context
+
 
 class PartyList(ListView):
     model = Party
