@@ -5,11 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>{{ model }}</h1>
+    <h1>{{ object_list }}</h1>
 
 <ul>
     <!-- Iterate over object_list -->
-    {% for object in object_list %}
+    {% for object in party_characters %}
     <!-- Display Objects -->
     <li><a href="{% url 'character_detail' pk=object.pk %}"> {{ object.name }}</a></li>
 

@@ -1,12 +1,11 @@
 from django.urls import path
 from . import views
-from .views import ModelsDropDown, index, CharacterList, CharacterDelete, CharacterUpdate, CharacterCreate, CharacterDetail
 
 urlpatterns = [
-    path('', index.index, name='index'),
+    path('', views.index.index, name='index'),
     # path('CharacterCreation/', views.CharacterCreation, name='character_creation'),
     path('models/',
-         ModelsDropDown.models_choice,
+         views.ModelsDropDown.models_choice,
          name='models'),
 
     path('character/list/',
@@ -14,18 +13,29 @@ urlpatterns = [
          name='character_list'),
 
     path('character/create/',
-         CharacterCreate.as_view(),
+         views.CharacterCreate.as_view(),
          name='character_create'),
 
     path('character/<int:pk>/detail/',
-         CharacterDetail.as_view(),
+         views.CharacterDetail.as_view(),
          name='character_detail'),
 
     path('character/<int:pk>/update/',
-         CharacterUpdate.as_view(),
+         views.CharacterUpdate.as_view(),
          name='character_update'),
 
     path('character/<int:pk>/delete/',
-         CharacterDelete.as_view(),
-         name='character_delete')
+         views.CharacterDelete.as_view(),
+         name='character_delete'),
+
+    path('party/create/',
+         views.PartyCreate.as_view(),
+         name='party_create'),
+
+    path('party/<int:pk>/update/',
+         views.PartyUpdate.as_view(),
+         name='party_update'),
+
+    path('party/list/',
+         views.PartyCharacters.as_view()),
 ]
