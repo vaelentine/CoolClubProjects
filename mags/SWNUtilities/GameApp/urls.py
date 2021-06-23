@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
-from .views import ModelsDropDown, index, CharacterList, CharacterDelete, CharacterUpdate, CharacterCreate, CharacterDetail
+from .views import ModelsDropDown, index, CharacterList, CharacterDelete, CharacterUpdate, CharacterCreate, CharacterDetail, PartyCreate, PartyUpdate, PartyCharacters
+
 
 urlpatterns = [
     path('', index.index, name='index'),
@@ -27,5 +28,19 @@ urlpatterns = [
 
     path('character/<int:pk>/delete/',
          CharacterDelete.as_view(),
-         name='character_delete')
+         name='character_delete'),
+
+    path('party/create/',
+         PartyCreate.as_view(),
+         name='party_create'),
+
+    path('party/<int:pk>/update/',
+         PartyUpdate.as_view(),
+         name='party_update'),
+
+    path('party/list/',
+         PartyCharacters.as_view()),
+
+    # path('party/add/',
+    #      )
 ]

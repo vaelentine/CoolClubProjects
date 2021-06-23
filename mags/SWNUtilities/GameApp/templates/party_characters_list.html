@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ object_list }}</h1>
+
+<ul>
+    <!-- Iterate over object_list -->
+    {% for object in party_characters %}
+    <!-- Display Objects -->
+    <li><a href="{% url 'character_detail' pk=object.pk %}"> {{ object.name }}</a></li>
+
+    <hr/>
+    <!-- If objet_list is empty  -->
+    {% empty %}
+    <li>No objects yet.</li>
+    {% endfor %}
+</ul>
+    <a href="{% url 'character_create' %}"> Create new {{ object }} </a>
+</body>
+</html>

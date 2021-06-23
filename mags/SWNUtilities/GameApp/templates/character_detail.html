@@ -10,9 +10,11 @@
     <p>Player: {{ object.player }}</p>
     <p>Attributes: {{ object.attributes }}</p>
     <p>Faction: {{ object.faction }}</p>
+    <p>Party: {{ object.party }}</p>
           <form action="{% url 'character_update' pk=object.pk %}">
          <button type="submit">Edit {{ object }}</button>
           </form>
     <a href="{% url 'character_list' %}"> Back to list</a>
 </body>
 </html>
+
