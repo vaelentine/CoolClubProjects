@@ -7,7 +7,7 @@ from ..forms import PartyForm
 from ..models import Party
 
 
-class PartyCharacters(ListView):
+class PartyCharactersList(ListView):
     model = Party
     template_name = 'party_characters_list.html'
 
@@ -15,9 +15,10 @@ class PartyCharacters(ListView):
         party = Party.objects.get(id=1)
         party_characters = party.character_party.all()
         context = super().get_context_data(**kwargs)
-        for character in party_characters:
-            context['party_characters'] = party_characters
+        context['party_characters'] = party_characters
+        context['party'] = party
         return context
+
 
 class PartyList(ListView):
     model = Party

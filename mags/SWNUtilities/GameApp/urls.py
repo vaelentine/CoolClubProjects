@@ -37,5 +37,9 @@ urlpatterns = [
          name='party_update'),
 
     path('party/list/',
-         views.PartyCharacters.as_view()),
+         views.PartyCharactersList.as_view()),
+
+    path('party/add/',
+         views.AddCharacterToParty.CharacterChoice,
+         name='add_char_to_party')
 ]

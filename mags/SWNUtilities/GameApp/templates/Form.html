@@ -10,5 +10,8 @@
     {{ form.as_p }}
         <input type="submit" value="Submit" />
     </form>
+    {% if url %}
+     <a href={{url}}> {{url_text}} </a>
+    {% endif %}
 </body>
 </html>

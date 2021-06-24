@@ -79,8 +79,7 @@ class CharacterModelUnitTests(TestCase):
         char_obj_2.save()
         # get all existing parties
         party = Party.objects.get(id=self.p_id)
-        # reverse lookup all characters that have
-        party.character_party.all()
+        # reverse lookup all characters that have party.character_party.all()
         # characters should be found ny reverse lookuyp
         with self.subTest():
             self.assertIn(char_obj_1, party.character_party.all(), 'key is not in container')
