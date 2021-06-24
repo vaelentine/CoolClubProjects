@@ -3,10 +3,12 @@ from django.shortcuts import render
 from ..forms.PartyCharacterForm import PartyCharacterChoiceForm
 from ..models.Party import Party
 from ..models.Character import Character
-
+from .PartyView import PartyList
 
 def CharacterChoice(request):
     context = {}
+    context['url'] = '/party/list'
+    context['url_text'] = "Back to Party list"
     if request.method == 'POST':
         form = PartyCharacterChoiceForm(request.POST)
         if form.is_valid():
