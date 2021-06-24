@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os, dotenv
+from .get_ip_addresss import get_ip_address
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,6 +24,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
+# allow hosting at ip address on port 8000
+# https://www.blogarama.com/guides-blogs/291778-teckguide-blog/20638621-serve-django-app-local-area-network
+LAN_HOST = f'{get_ip_address()}'
 
 # Dotenv / os for environment variables
 dotenv_file = os.path.join(BASE_DIR, ".env")
@@ -33,7 +39,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [LAN_HOST]
 
 
 # Application definition
