@@ -1,9 +1,3 @@
-"""
-from django.db.models import get_app, get_models
-
-app = get_app('my_application_name')
-for model in get_models(app):"""
-
 from django import forms
 from django.apps import apps
 from ..models import Party, Character
