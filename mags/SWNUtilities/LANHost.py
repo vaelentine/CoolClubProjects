@@ -1,4 +1,5 @@
-import os, sys, subprocess
+import os
+import sys
 from SWNUtilities.get_ip_addresss import get_ip_address
 
 LOCAL_IP = get_ip_address()
@@ -6,6 +7,7 @@ PORT = '8000'
 venv_script_path = '.\\..\\venv\\Scripts\\python'
 
 start_command = f'./manage.py runserver {LOCAL_IP}:{PORT}'
+
 
 # is virtualenv active?
 def get_base_prefix_compat():
