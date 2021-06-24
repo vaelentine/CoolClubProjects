@@ -40,5 +40,6 @@ urlpatterns = [
          views.PartyCharactersList.as_view()),
 
     path('party/add/',
-         views.AddCharacterToParty.CharacterChoice)
+         views.AddCharacterToParty.CharacterChoice,
+         name='add_char_to_party')
 ]

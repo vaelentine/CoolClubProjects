@@ -15,8 +15,8 @@ class PartyCharactersList(ListView):
         party = Party.objects.get(id=1)
         party_characters = party.character_party.all()
         context = super().get_context_data(**kwargs)
-        for character in party_characters:
-            context['party_characters'] = party_characters
+        context['party_characters'] = party_characters
+        context['party'] = party
         return context
 
 

@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>{{ object_list }}</h1>
+    <h1>{{ party.name }}</h1>
 
 <ul>
     <!-- Iterate over object_list -->
@@ -19,6 +19,6 @@
     <li>No objects yet.</li>
     {% endfor %}
 </ul>
-    <a href="{% url 'character_create' %}"> Create new {{ object }} </a>
+    <a href="{% url 'add_char_to_party' %}"> Add Character To Party </a>
 </body>
 </html>
