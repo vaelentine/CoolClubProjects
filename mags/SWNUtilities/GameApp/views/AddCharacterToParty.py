@@ -3,7 +3,7 @@ from django.shortcuts import render
 from ..forms.PartyCharacterForm import PartyCharacterChoiceForm
 from ..models.Party import Party
 from ..models.Character import Character
-from .PartyView import PartyList
+
 
 def CharacterChoice(request):
     context = {}
