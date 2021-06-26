@@ -1,12 +1,11 @@
 from django.shortcuts import render
+from GameApp.forms.PartyCharacterForm import PartyCharacterChoiceForm
+from GameApp.models.Party import Party
+from GameApp.models.Character import Character
 
-from ..forms.PartyCharacterForm import PartyCharacterChoiceForm
-from ..models.Party import Party
-from ..models.Character import Character
 
-
-def CharacterChoice(request):
-    context = {}
+def character_choice(request):
+    context = dict()
     context['url'] = '/party/list'
     context['url_text'] = "Back to Party list"
     if request.method == 'POST':
