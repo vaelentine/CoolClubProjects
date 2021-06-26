@@ -1,33 +1,48 @@
 from django.urls import path
 from . import views
+from GameApp.views import ModelsDropDown
+from GameApp.views import CharacterList, CharacterCreate, CharacterUpdate
+from GameApp.views import CharacterDetail, CharacterDelete
+from GameApp.views import AttributeCreate
+from GameApp.views import character_choice
+from GameApp.views import PartyCharacterList
 
 urlpatterns = [
+
+    # Base View
     path('', views.index.index, name='index'),
-    # path('CharacterCreation/', views.CharacterCreation, name='character_creation'),
+
+    # Models
     path('models/',
-         views.ModelsDropDown.models_choice,
+         ModelsDropDown.models_choice,
          name='models'),
 
+    # Character
     path('character/list/',
-         views.CharacterList.as_view(),
+         CharacterList.as_view(),
          name='character_list'),
 
     path('character/create/',
-         views.CharacterCreate.as_view(),
+         CharacterCreate.as_view(),
          name='character_create'),
 
     path('character/<int:pk>/detail/',
-         views.CharacterDetail.as_view(),
+         CharacterDetail.as_view(),
          name='character_detail'),
 
     path('character/<int:pk>/update/',
-         views.CharacterUpdate.as_view(),
+         CharacterUpdate.as_view(),
          name='character_update'),
 
     path('character/<int:pk>/delete/',
-         views.CharacterDelete.as_view(),
+         CharacterDelete.as_view(),
          name='character_delete'),
 
+    # Attributes
+    path('character/<int:pk>/attribute/add/',
+         AttributeCreate.as_view()),
+
+    # Party
     path('party/create/',
          views.PartyCreate.as_view(),
          name='party_create'),
@@ -37,9 +52,11 @@ urlpatterns = [
          name='party_update'),
 
     path('party/list/',
-         views.PartyCharactersList.as_view()),
+         PartyCharacterList.as_view()),
 
     path('party/add/',
-         views.AddCharacterToParty.CharacterChoice,
-         name='add_char_to_party')
+         character_choice,
+         name='add_char_to_party'),
+
+
 ]
