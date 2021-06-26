@@ -12,7 +12,7 @@ class Attributes(models.Model):
     current_hit_points = models.SmallIntegerField(default=10)
 
     def __str__(self):
-        return [
+        return str([
             self.strength,
             self.dexterity,
             self.constitution,
@@ -20,4 +20,4 @@ class Attributes(models.Model):
             self.wisdom,
             self.charisma,
             self.hit_point_max
-                ]
+                ])
