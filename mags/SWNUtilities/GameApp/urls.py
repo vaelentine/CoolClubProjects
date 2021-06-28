@@ -54,7 +54,8 @@ urlpatterns = [
          name='party_update'),
 
     path('party/list/',
-         PartyCharacterList.as_view()),
+         PartyCharacterList.as_view(),
+         name='main_party_list'),
 
     path('party/add/',
          character_choice,
