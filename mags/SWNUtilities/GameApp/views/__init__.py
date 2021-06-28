@@ -4,4 +4,5 @@ from GameApp.views.Character import CharacterList, CharacterCreate, CharacterDet
 from GameApp.views.Party import PartyCreate, PartyDetail, PartyList, PartyUpdate, PartyDelete, PartyCharacterList
 from GameApp.views.Party import character_choice
 from GameApp.views.Attributes import AttributeCreate
-from GameApp.views.Player import PlayerCreate, PlayerDelete, PlayerList
+from GameApp.views.Player import PlayerCreate, PlayerDelete, PlayerList, PlayerUpdate
+from .Player import PlayerDetail

@@ -6,6 +6,8 @@ from GameApp.views import CharacterDetail, CharacterDelete
 from GameApp.views import AttributeCreate
 from GameApp.views import character_choice
 from GameApp.views import PartyCharacterList
+from GameApp.views import PlayerList, PlayerCreate, PlayerDelete, PlayerUpdate, PlayerDetail
+
 
 urlpatterns = [
 
@@ -57,6 +59,16 @@ urlpatterns = [
     path('party/add/',
          character_choice,
          name='add_char_to_party'),
+
+    path('player/create/', PlayerCreate.as_view(), name='player_create'),
+
+    path('player/<int:pk>/delete', PlayerDelete.as_view(), name='player_delete'),
+
+    path('player/list/', PlayerList.as_view(), name='player_list'),
+
+    path('player/<int:pk>/update', PlayerUpdate.as_view(), name='player_update'),
+
+    path('player/<int:pk>/detail', PlayerDetail.as_view(), name='player_detail'),
 
 
 ]
