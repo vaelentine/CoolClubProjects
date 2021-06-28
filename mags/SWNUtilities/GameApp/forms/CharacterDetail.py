@@ -6,4 +6,3 @@ class CharacterDetail(ModelForm):
     class Meta:
         model = Character
         fields = '__all__'
-

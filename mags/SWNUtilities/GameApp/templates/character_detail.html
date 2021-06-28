@@ -7,10 +7,18 @@
 <body>
     {% csrf_token %}
     <h1>Name: {{ object.name }}</h1>
-    <p>Player: {{ object.player }}</p>
+    {% if object.player %}
+    <p>Player: <a href="{% url 'player_detail' object.player.pk %}">{{ object.player }}</a></p>
+    {% endif %}
+    {% if object.attributes %}
     <p>Attributes: {{ object.attributes }}</p>
-    <p>Faction: {{ object.faction }}</p>
-    <p>Party: {{ object.party }}</p>
+    {% endif %}
+    {% if object.faction %}
+    <p>Faction:  <a href="{% url 'faction_detail' object.faction.pk %}">{{ object.faction }}</a></p>
+    {% endif %}
+    {% if object.party %}
+    <p>Party: <a href="{% url 'main_party_list' %}"> {{ object.party }}</p>
+    {% endif %}
           <form action="{% url 'character_update' pk=object.pk %}">
          <button type="submit">Edit {{ object }}</button>
           </form>

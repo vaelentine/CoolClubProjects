@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1>Name: {{ object.name }}</h1>
+          <form action="{% url 'faction_update' pk=object.pk %}">
+         <button type="submit">Edit {{ object }}</button>
+          </form>
+              <form action="{% url 'faction_delete' pk=object.pk %}">
+         <button type="submit">Delete {{ object }}</button>
+          </form>
+    <p><a href="{% url 'faction_character_list' pk=faction.pk %}"> Faction members</a></p>
+    <p><a href="{% url 'faction_list' %}"> Faction list</a></p>
+</body>
+</html>
