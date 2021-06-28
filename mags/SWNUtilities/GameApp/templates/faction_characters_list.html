@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ faction }}</h1>
+
+<ul>
+    <!-- Iterate over object_list -->
+    {% for object in faction_characters %}
+    <!-- Display Objects -->
+    <li><a href="{% url 'character_detail' pk=object.pk %}"> {{ object.name }}</a></li>
+
+    <hr/>
+    <!-- If objet_list is empty  -->
+    {% empty %}
+    <li>No objects yet.</li>
+    {% endfor %}
+</ul>
+<ul>
+    <li><a href="{% url 'faction_list' %}"> Faction list</a></li>
+    <li><a href="{% url 'character_list' %}"> Character list</a></li>
+</ul>
+</body>
+</html>
