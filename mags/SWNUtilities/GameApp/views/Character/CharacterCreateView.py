@@ -8,6 +8,12 @@ class CharacterCreate(CreateView):
     fields = ['name']
     template_name = "Form.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['heading'] = "Give your character a name"
+        context['submit_button'] = 'Save'
+        return context
+
     def form_valid(self, form):
         character = form.save()  # save form
         return redirect('character_update', pk=character.pk)

@@ -10,9 +10,8 @@
     {% if object.player %}
     <p>Player: <a href="{% url 'player_detail' object.player.pk %}">{{ object.player }}</a></p>
     {% endif %}
-    {% if object.attributes %}
+
     <p>Attributes: {{ object.attributes }}</p>
-    {% endif %}
     {% if object.faction %}
     <p>Faction:  <a href="{% url 'faction_detail' object.faction.pk %}">{{ object.faction }}</a></p>
     {% endif %}
@@ -22,6 +21,6 @@
           <form action="{% url 'character_update' pk=object.pk %}">
          <button type="submit">Edit {{ object }}</button>
           </form>
-    <a href="{% url 'character_list' %}"> Back to list</a>
+    <a href="{% url 'character_list' %}"> Character list</a>
 </body>
 </html>

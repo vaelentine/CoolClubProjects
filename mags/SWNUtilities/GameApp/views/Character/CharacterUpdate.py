@@ -10,7 +10,15 @@ from GameApp.models import Character
 class CharacterUpdate(UpdateView):
     model = Character
     template_name = "Form.html"
-    fields = '__all__'
+    form = CharacterDetail
+    fields = [
+        'name',
+        'pronouns',
+        'faction',
+        'player',
+        'party'
+
+    ]
 
     def form_valid(self, form):
         character = form.save()  # save form

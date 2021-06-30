@@ -35,5 +35,8 @@ from GameApp.forms import ModelChoiceForm
 def models_choice(request):
     context = {}
     context['form'] = ModelChoiceForm
+
+    #if form is post, then get the model selected and go to that model's list page
+
     return render(request, 'form.html', context)
 
