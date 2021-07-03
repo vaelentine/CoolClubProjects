@@ -7,3 +7,5 @@ from GameApp.views.Attributes import AttributeCreate
 from GameApp.views.Player import PlayerCreate, PlayerDelete, PlayerList, PlayerUpdate
 from .Player import PlayerDetail, PlayerCharacterList
 from .Faction import FactionCreate, FactionDelete, FactionDetail, FactionList, FactionUpdate, FactionCharacterList
+from .Background import BackgroundList, BackgroundDetail, BackgroundUpdate, BackgroundDelete, BackgroundCreate
+from .Character.AddCharacterBackground import AddCharacterBackground

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    {% load class_name %}
+    {% csrf_token %}
+    <h1>{{ object|class_name }}: {{ object }}</h1>
+
+    <div class="object_details">
+        {% include template_name %}
+    </div>
+
+    <br>
+
+    <div class="nav">
+        {% with object|class_name|lower|add:"_update" as update_url %}
+        <p><a href="{% url update_url object.pk %}"> update {{object }}</a></p>
+        {% endwith %}
+        {% with object|class_name|lower|add:"_delete" as delete_url %}
+        <p><a href="{% url delete_url object.pk %}"> delete {{object }}</a></p>
+        {% endwith %}
+
+        {% with object_class=object|class_name|lower object_class_list=object|class_name|lower|add:"_list" %}
+        <p><a href="{% url object_class_list %}"> {{ object_class }} list</a></p>
+        {% endwith %}
+    </div>
+</body>
+</html>

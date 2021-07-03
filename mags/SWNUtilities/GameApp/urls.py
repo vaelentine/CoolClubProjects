@@ -8,7 +8,8 @@ from GameApp.views import character_choice
 from GameApp.views import PartyCharacterList
 from GameApp.views import PlayerList, PlayerCreate, PlayerDelete, PlayerUpdate, PlayerDetail, PlayerCharacterList
 from GameApp.views import FactionList, FactionCreate, FactionDelete, FactionUpdate, FactionDetail, FactionCharacterList
-
+from GameApp.views import BackgroundDetail, BackgroundList, BackgroundUpdate, BackgroundDelete, BackgroundCreate
+from GameApp.views import AddCharacterBackground
 urlpatterns = [
 
     # Base View
@@ -39,10 +40,6 @@ urlpatterns = [
     path('character/<int:pk>/delete/',
          CharacterDelete.as_view(),
          name='character_delete'),
-
-    # Attributes
-    path('character/<int:pk>/attribute/add/',
-         AttributeCreate.as_view()),
 
     # Party
     path('party/create/',
@@ -110,5 +107,43 @@ urlpatterns = [
     path('faction/<int:pk>/list/',
          FactionCharacterList.as_view(),
          name='faction_character_list'),
+
+    # background
+    path('background/<int:pk>/detail/',
+         BackgroundDetail.as_view(),
+         name='background_detail'
+         ),
+
+    path('background/create/',
+         BackgroundCreate.as_view(),
+         name='background_create'
+         ),
+
+    path('background/<int:pk>/delete',
+         BackgroundDelete.as_view(),
+         name='background_delete'
+         ),
+
+    path('background/list/',
+         BackgroundList.as_view(),
+         name='background_list'
+         ),
+
+    path('background/<int:pk>/update',
+         BackgroundUpdate.as_view(),
+         name='background_update'
+         ),
+
+    # CHARACTER CREATION
+
+    # Attributes
+    path('character/<int:pk>/attribute/add/',
+         AttributeCreate.as_view(),
+         name='attribute_creation'),
+
+    # Background
+    path('character/<int:pk>/background/add/',
+         AddCharacterBackground.as_view(),
+         name='add_background'),
 
 ]

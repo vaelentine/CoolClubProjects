@@ -46,6 +46,7 @@ ALLOWED_HOSTS = [LAN_HOST]
 
 INSTALLED_APPS = [
     'GameApp.apps.GameAppConfig',
+    'GameApp.templatetags',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

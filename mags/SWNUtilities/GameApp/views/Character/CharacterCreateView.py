@@ -5,15 +5,16 @@ from GameApp.models import Character
 
 class CharacterCreate(CreateView):
     model = Character
-    fields = ['name']
+    fields = []
     template_name = "Form.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['heading'] = "Give your character a name"
-        context['submit_button'] = 'Save'
+        context['heading'] = "Create new character"
+        context['subheading'] = "Proceed and roll attributes?"
+        context['submit_button'] = 'Proceed'
         return context
 
     def form_valid(self, form):
         character = form.save()  # save form
-        return redirect('character_update', pk=character.pk)
+        return redirect('attribute_creation', pk=character.pk)

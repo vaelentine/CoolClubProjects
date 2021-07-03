@@ -8,13 +8,14 @@ from random import randint
 class AttributeCreate(CreateView):
     model = Attributes
     form_class = AttributeForm
-    template_name = "attribute_gen.html"
+    template_name = "Form.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['title'] = "Character Attributes"
         context['heading'] = "These are your randomly generated attributes."
         context['subheading'] = "boost one value to 14"
-        context['submit_button'] = 'Save'
+        context['submit_button'] = 'Save and proceeed to backgrounds'
         return context
 
     def form_valid(self, form):
@@ -22,5 +23,4 @@ class AttributeCreate(CreateView):
         attribute = form.save()  # save form
         character.attributes = Attributes.objects.get(pk=attribute.pk)
         character.save()
-        return redirect('character_detail', pk=character.pk)
-
+        return redirect('add_background', pk=character.pk)

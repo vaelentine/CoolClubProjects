@@ -1,0 +1,24 @@
+<ul>
+
+    {% if object.player %}
+    <li><p>Player: <a href="{% url 'player_detail' object.player.pk %}">{{ object.player }}</a></p>
+    {% endif %}</li>
+
+    {% if object.attributes %}
+    <li><p>Attributes: {{ object.attributes }}</p></li>
+    {% endif %}
+
+     {% if object.attributes %}
+    <li><p>Background: <a href="{% url 'background_detail' object.background.pk %}"> {{ object.background }}</p></li>
+
+    {% with o_f=object.faction %}
+    <li><p>Faction: <a href="{% url 'faction_detail' o_f.pk %}">{{ o_f }}</a></p></li>
+    {% endwith %}
+
+    {% if object.party %}
+    <li><p>Party: <a href="{% url 'main_party_list' %}"> {{ object.party }}</p></li>
+    {% endif %}
+
+
+
+</ul>

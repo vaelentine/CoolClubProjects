@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<body>
+{% load class_name %}
+    <h1>{{ model }} list</h1>
+
+<ul>
+    <!-- Iterate over object_list -->
+    {% for object in object_list %}
+    <!-- Display Objects -->
+
+    {% with model|add:"_detail" as object_detail %}
+    <li><a href="{% url object_detail pk=object.pk %}"> {{ object.name }}</a></li>
+    {% endwith %}
+    <hr/>
+    <!-- If objet_list is empty  -->
+    {% empty %}
+    <li>No objects yet.</li>
+    {% endfor %}
+</ul>
+    <div class="nav">
+        {% with model|add:"_create" as create_url %}
+        <p><a href="{% url create_url %}"> Create new {{object }}</a></p>
+        {% endwith %}
+
+    </div>
+</body>
+</html>

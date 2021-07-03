@@ -1,4 +1,5 @@
 from django.db import models
+from GameApp.utils import get_attribute_modifier
 
 
 class Attributes(models.Model):
@@ -8,8 +9,6 @@ class Attributes(models.Model):
     intelligence = models.PositiveSmallIntegerField(default=10)
     wisdom = models.PositiveSmallIntegerField(default=10)
     charisma = models.PositiveSmallIntegerField(default=10)
-    hit_point_max = models.PositiveSmallIntegerField(default=10)
-    current_hit_points = models.SmallIntegerField(default=10)
 
     def __str__(self):
         return str([
@@ -19,5 +18,5 @@ class Attributes(models.Model):
             self.intelligence,
             self.wisdom,
             self.charisma,
-            self.hit_point_max
                 ])
+

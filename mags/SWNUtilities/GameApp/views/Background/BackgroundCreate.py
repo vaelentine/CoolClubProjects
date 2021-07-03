@@ -1,10 +1,10 @@
-from GameApp.models import Faction
-from django.views.generic import CreateView
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
+from django.views.generic.edit import CreateView
+from GameApp.models import Background
 
 
-class FactionCreate(CreateView):
-    model = Faction
+class BackgroundCreate(CreateView):
+    model = Background
     fields = '__all__'
     template_name = "Form.html"
 
@@ -16,5 +16,5 @@ class FactionCreate(CreateView):
         return context
 
     def form_valid(self, form):
-        faction = form.save()
-        return redirect('faction_update', pk=faction.pk)
+        background = form.save()  # save form
+        return redirect('background_update', pk=background.pk)

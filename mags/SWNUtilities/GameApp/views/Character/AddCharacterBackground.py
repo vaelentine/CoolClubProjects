@@ -7,20 +7,21 @@ from GameApp.forms import CharacterDetail
 from GameApp.models import Character
 
 
-class CharacterUpdate(UpdateView):
+class AddCharacterBackground(UpdateView):
     model = Character
     template_name = "Form.html"
     form = CharacterDetail
     fields = [
-        'name',
         'background',
-        'pronouns',
-        'faction',
-        'player',
-        'party'
-
     ]
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['heading'] = "Choose A background"
+        context['subheading'] = ""
+        context['submit_button'] = 'Proceed to Skills?'
+        return context
 
     def form_valid(self, form):
         character = form.save()  # save form
-        return redirect('character_detail', pk=character.pk)
+        return redirect('skills_choice', pk=character.pk)
