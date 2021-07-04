@@ -6,3 +6,4 @@ from .Faction import Faction
 from .Party import Party
 from .Pronouns import Pronouns
 from .Background import Background
+from .Skill import Skill
