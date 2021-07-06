@@ -16,8 +16,8 @@ class CharacterModelUnitTests(TestCase):
             'constitution':11,
             'intelligence':13,
             'wisdom':16,
-            'charisma':18,
-            'hit_point_max':20}
+            'charisma':18
+        }
         Character.objects.create(name=self.mock.name_01)
         self.mock.faction = 'The Greatest Test'
         test_stats = Attributes.objects.create(
@@ -27,7 +27,6 @@ class CharacterModelUnitTests(TestCase):
             intelligence=self.mock.stats['intelligence'],
             wisdom=self.mock.stats['wisdom'],
             charisma=self.mock.stats['charisma'],
-            hit_point_max=self.mock.stats['hit_point_max']
         )
         test_obj = Character.objects.create(name=self.mock.name_02)
         test_obj.attributes=test_stats
